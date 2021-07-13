@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nós | Kiwyz</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="/index.html">
+                <img src="/images/logo(1).png" class="logo">
+            </a>
+            <div class="toggle" onclick="toggleMenu()">
+
+            </div>
+            <ul class="navigation"> 
+                <li><a href="../produtos/produtos.html">PRODUTOS</a></li>
+                <li><a href="#">sobre nós</a></li>
+                <li><a class="btn" href="//api.whatsapp.com/send?phone=5519996001311&text=Oi%20Fran!!%20Tudo%20bem%3F%20Gostaria%20de%20saber%20algumas%20informa%C3%A7%C3%B5es%20sobre%20seus%20cosm%C3%A9ticos%20naturais%20%F0%9F%98%8D%20Pode%20me%20ajudar%3F">Converse com a gente!</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Feito por você,<br> para você!</h2>
+                <p>SHAMPOO, CONDICIONADOR e LEAVE-IN únicos: criados com base no que você escolher. Valorizamos seu cabelo. Celebramos seu jeito. Criamos a sua fórmula.</p>
+                <a href="../produtos/produtos.html">PERSONALIZAR KIT</a>
+            </div>
+
+            <div class="imgBox">
+                <div class="swiper-container mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../images/coca/cocacola1.png" /></div>
+                        <div class="swiper-slide"><img src="../images/coca/cocacola2.png" /></div>
+                        <div class="swiper-slide"><img src="../images/coca/cocacola3.png" /></div>
+                        <div class="swiper-slide"><img src="../images/coca/cocacola4.png" /></div>
+                        <div class="swiper-slide"><img src="../images/coca/cocacola5.png" /></div>
+                        <div class="swiper-slide"><img src="../images/coca/cocacola6.png" /></div>
+                        <div class="swiper-slide"><img src="../images/kit.png" /></div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="iframe-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/V9-vTLFXIcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <ul class="sci">
+            <li><a href="#"><img src="../images/instagram-32.ico"></a></li>
+            <li><a href="#"><img src="../images/whatsapp-32.ico"></a></li>
+        </ul>
+    </section>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 200,
+            modifier: 1,
+            slideShadows: true,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+          },
+          loop: true,
+        });
+
+        function toggleMenu(){
+            const menuToggle = document.querySelector('.toggle');
+            const navigation = document.querySelector('.navigation');
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>

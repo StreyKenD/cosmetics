@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E1F31;
+}
+section .circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #22E4AC ;
+    clip-path: circle(70% at right -20%);
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    position: relative;
+    max-width: 150px; 
+}      
+
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox{
+    position: relative;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.content .textBox h2{
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    line-height: 2.7rem;
+    font-weight: 700;
+}
+
+.content .textBox p{
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #08B3E5;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.sci{
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sci li{
+    list-style: none;
+}
+
+.sci li a{
+    display: inline-block;
+    margin-left: 15px;
+    background: #808080;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+}
+
+.sci li a:hover{
+    background: #08B3E5;
+    transform: translateY(-10px);
+}
+
+.sci li a img{
+    filter: invert(1);
+    transform: scale(0.7);
+}
+
+/****slider****/
+
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.content .imgBox {
+    width: 500px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content .imgBox img{
+    max-width: 150px;
+}
+
+.swiper-slide img{
+    position: absolute;
+    bottom: 0;
+    max-height: 100%;
+}
+
+.swiper-container-3d .swiper-slide-shadow-bottom,
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-top {
+ background-image: none;
+}
+
+
+@media (max-width:991px){
+    header{
+        padding: 40px;
+    }
+    section{
+        padding-top: 150px;
+        padding-bottom: 0px;
+    }
+    .sci{
+        left: 40px;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .content .textBox,
+    .content .imgBox{
+        max-width: 100%;
+    }
+
+    .swiper-slide{
+        height: 500px;
+    }
+
+    header .navigation{
+        display: none;
+    }
+
+    header .navigation.active{
+        display: flex;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1E1F31;
+        position: fixed;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    header .navigation li a{
+        margin: 50px 0;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    header .navigation li ul{
+        display: none;
+    }
+
+    .toggle{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: url(/images/coca/menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        z-index: 10000;
+    }
+
+    .toggle.active{
+        background: url(/images/coca/close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: fixed;
+        right: 40px;
+    }
+
+    
+}
+
+.iframe-container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+    bottom: 10px;
+}
+.iframe-container iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+ul ul{
+    max-width: 250px;
+    position: absolute;
+    padding: 10px 0;
+    opacity: 0;
+    z-index: -9999;
+    transition: all ease 0.5s;
+}
+ul li:hover ul{
+    opacity: 1;
+    z-index: 9;
+    padding: 10px 0;
+}
+ul ul li{
+    margin: 0;
+    width: 100%;
+}
+ul ul li a{
+    width: 100%;
+    display: inline-block;
+    padding: 12px;
+    background-color: #383a58;
+    color: #fff;
+}
+ul ul li:first-child a{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+ul ul li:last-child a{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+ul ul li a:hover{
+    background-color: #08B3E5;
+    color: #fff;
+}
+
+
+
+
+header ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+header ul li a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all ease 0.5s;
+}
+header ul li a:hover{
+    color: #08B3E5;
+}
+header ul li a.btn{
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    line-height: 20px;
+    background-color: #08B3E5;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: all ease 0.5s;
+}
+header ul li a.btn:hover{
+    background-color: #615c59;
+}
+
+

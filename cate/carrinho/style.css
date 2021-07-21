@@ -10,18 +10,61 @@
 }
 
 body{
-    background-color: #efefef;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1E1F31;
+    overflow-x: hidden;
+}
+
+ul ul{
+    max-width: 250px;
+    position: absolute;
+    padding: 10px 0;
+    opacity: 0;
+    z-index: -9999;
+    transition: all ease 0.5s;
+}
+ul li:hover ul{
+    opacity: 1;
+    z-index: 9;
+    padding: 10px 0;
+}
+ul ul li{
+    margin: 0;
+    width: 100%;
+}
+ul ul li a{
+    width: 100%;
+    display: inline-block;
+    padding: 12px;
+    background-color: #383a58;
+    color: #fff;
+}
+ul ul li:first-child a{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+ul ul li:last-child a{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+ul ul li a:hover{
+    background-color: #08B3E5;
+    color: #fff;
 }
 
 header{
-    padding: 50px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
-
 header .logo{
-    padding: 43px 100px;
+    position: relative;
+    max-width: 150px; 
 }
 
 header ul li{
@@ -30,7 +73,7 @@ header ul li{
     margin: 0 15px;
 }
 header ul li a{
-    color: #aba9b4;
+    color: #fff;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1px;
@@ -40,22 +83,23 @@ header ul li a:hover{
     color: #08B3E5;
 }
 header ul li a.btn{
-            display: inline-block;
-            width: 200px;
-            height: 60px;
-            line-height: 20px;
-            background-color: #08B3E5;
-            color: #fff;
-            text-align: center;
-            justify-content: center;
-            padding-top: 10px;
-            font-size: 15px;
-            border-radius: 50px;
-            transition: all ease 0.5s;
-        }
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    line-height: 20px;
+    background-color: #08B3E5;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: all ease 0.5s;
+}
 header ul li a.btn:hover{
     background-color: #615c59;
 }
+
 
 .container{
     min-height: 100vh;
@@ -66,11 +110,60 @@ header ul li a.btn:hover{
     overflow: hidden;
 }
 
+
 .card{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 860px;
+}
+
+.grid > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px 0;
+    font-size: 24px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.item1{
+    grid-column: 1 / span 4;
+}
+
+.item2{
+    grid-column: 2 / span 2;
+}
+
+.cart{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 860px;
+    border-radius: 25px;
+}
+
+.total, .frete{
+    text-align: center;
+    border-radius: 25px;
+}
+
+.frete-data{
+    display: none;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+th {
+    background-color: black;
+    color: white;
 }
 
 .shoeBackground{
@@ -147,13 +240,6 @@ header ul li a.btn:hover{
 
 .gradient[color="black"]{
     background-image: linear-gradient(45deg, #111, #666);
-}
-
-.logo{
-    position: absolute;
-    width: 100px;
-    left: 20px;
-    top: 20px;
 }
 
 .share{
@@ -266,14 +352,6 @@ header ul li a.btn:hover{
     font-size: 17px;
 }
 
-input[type="radio"] {
-    display: none;
-  }
-
-input[type="checkbox"] {
-    display: none;
-  }
-
 .color-container{
     padding: 10px 0;
 }
@@ -285,7 +363,6 @@ input[type="checkbox"] {
 }
 
 .color{
-    display: inline-block;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -322,7 +399,6 @@ input[type="checkbox"] {
 
 .color.active{
     border-color: #fff;
-    border-radius: 100px;
     box-shadow: 0 0 10px .5px rgba(0, 0, 0, 0.2);
     transform: scale(1.1);
 }
@@ -402,10 +478,12 @@ input[type="checkbox"] {
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: 500;
     font-size: 0.7rem;
     transition: .5s;
     border-radius: 30px;
+    text-align: center;
 }
 
 .buy:hover{
@@ -416,144 +494,55 @@ input[type="checkbox"] {
     margin-right: 2px;
 }
 
-@media (max-width: 1070px){
-    .shoe{
-        width: 135%;
+@media (max-width:991px){
+    header{
+        padding: 40px;
     }
-    .enfeite{
+    section{
+        padding-top: 150px;
+        padding-bottom: 0px;
+    }
+    .sci{
+        left: 40px;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .content .textBox,
+    .content .imgBox{
+        max-width: 100%;
+    }
+
+    .swiper-slide{
+        height: 500px;
+    }
+
+    header .navigation{
         display: none;
     }
-}
 
-@media (max-width: 1000px){
-    .card{
-        flex-direction: column;
+    header .navigation.active{
+        display: flex;
+        top: 0;
+        left: 0;
         width: 100%;
-        box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2);
+        height: 100%;
+        background: #1E1F31;
+        position: fixed;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    header .navigation li a{
+        margin: 50px 0;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    header .navigation li ul{
+        display: none;
     }
     
-    .card > div{
-        width: 100%;
-        box-shadow: none;
-    }
-
-    .shoe{
-        width: 100%;
-        transform: rotate(-5deg) translateY(-50%);
-        top: 55%;
-        right: 2%;
-    }
-
-    .nike{
-        top: 20%;
-        left: 5%;
-    }
-
-    .shoeBackgroundShampoo{
-        bottom: 0px;
-    }
-}
-
-@media (max-width: 600px){
-    .share{
-        width: 40px;
-        height: 40px;
-    }
-
-    .share i {
-        font-size: 1rem;
-        line-height: 40px;
-    }
-
-    .logo{
-        width: 70px;
-    }
-}
-
-@media (max-width: 490px){
-    .nike{
-        font-size: 7rem;
-    }
-
-    .shoeName div .big{
-        font-size: 1.3rem;
-    }
-
-    .small{
-        font-size: 1rem;
-    }
-
-    .new{
-        padding: 2px 6px;
-        font-size: .9rem;
-    }
-
-    .title{
-        font-size: .9rem;
-    }
-
-    .text{
-        font-size: .8rem;
-    }
-
-    .buy{
-        padding: .5rem .8rem;
-        font-size: .8rem;
-    }
-
-    .price h1{
-        font-size: 1.5rem;
-    }
-
-    .price i{
-        font-size: .9rem;
-    }
-
-    .size{
-        width: 30px;
-        height: 30px;
-        margin: 0 8px;
-        font-size: .9rem;
-        line-height: 30px;
-    }
-
-    .color{
-        margin: 0 6px;
-        width: 0 20px;
-        width: 20px;
-        height: 20px;
-        border-width: 4px;
-    }
-
-    .share{
-        width: 35px;
-        height: 35px;
-        top: 10px;
-        right: 10px;
-    }
-
-    .share i{
-        font-size: .8rem;
-        line-height: 35px;
-    }
-
-    .logo{
-        width: 60px;
-        top: 10px;
-        left: 10px;
-    }
-
-    .info{
-        padding: 20px;
-    }
-}
-
-@media (max-width: 400px){
-    .buy i{
-        display: none;
-    }
-
-    .container{
-        padding: 20px;
-    }
 }

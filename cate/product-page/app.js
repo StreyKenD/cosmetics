@@ -12,6 +12,10 @@ const colors = document.querySelectorAll('.color');
 const shoes = document.querySelectorAll('.shoe');
 const gradients = document.querySelectorAll('.gradient');
 const shoeBg = document.querySelector('.shoeBackground');
+const price = document.querySelector('.price');
+const product = document.querySelector('.big');
+const buyButton = document.querySelector('.buy')
+const form = document.getElementById('form');
 
 let prevColor = "blue";
 let animationEnd = true;
@@ -57,8 +61,19 @@ function changeOption7(){
 }
 
 function changeOption8(){
-    options8.forEach(option8 => option8.classList.remove('active'));
-    this.classList.add('active');
+    if ($('input[type=checkbox]:checked').length >= 5) {
+        const checkboxs = Array.from(document.querySelectorAll('input[type=checkbox]'));
+        let actual = checkboxs.find(el => el.getAttribute('value') === this.innerText);
+        this.classList.remove('active');
+        alert("Somente 5 podem ser selecionados");
+        actual.checked = true;
+    } else {
+        if (this.classList.length > 1) {
+            this.classList.remove('active');
+        } else {
+            this.classList.add('active');
+        }
+    }
 }
 
 function changeOption9(){
@@ -96,6 +111,53 @@ function changeColor(){
     })
 }
 
+function submitForm() {
+    let formData = new FormData(form);
+    let data = {};
+    for (let newData of formData.entries()) {
+        if (newData[0] === 'effect') {
+            if (data[newData[0]] !== undefined && data[newData[0]] !== null) {
+                data[newData[0]].push(newData[1]);
+            } else {
+                data[newData[0]] = [newData[1]];
+            }
+        } else {
+            data[newData[0]] = newData[1];
+        }
+    }
+
+    data.product = product.innerText;
+    if (data.product === "Shampoo Natural") {
+        let name = document.getElementById('name');
+        data.name = name.value;
+    }
+
+    let priceData = price.getElementsByTagName("h1");
+    let priceFormated = parseFloat(priceData[0].innerText.split('R$')[1].replace(',', '.'));
+    data.price = priceFormated;
+    
+    data.quantity = 1;
+    
+    let orders = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const valueExist = orders.find(o => valueExists(o, data));
+    if (valueExist) {
+        valueExist.quantity += 1;
+    } else {
+        if (orders.length >= 1) {
+            console.log(orders.length);
+            data.id = orders[orders.length - 1].id + 1;
+        } else {
+            data.id = orders.length + 1;
+        }
+        orders.push(data);
+    }
+    
+    localStorage.setItem("cart", JSON.stringify(orders));
+
+    form.submit();
+}
+
 sizes.forEach(size => size.addEventListener('click', changeSize));
 colors.forEach(c => c.addEventListener('click', changeColor));
 options1.forEach(option1 => option1.addEventListener('click', changeOption1));
@@ -107,6 +169,17 @@ options6.forEach(option6 => option6.addEventListener('click', changeOption6));
 options7.forEach(option7 => option7.addEventListener('click', changeOption7));
 options8.forEach(option8 => option8.addEventListener('click', changeOption8));
 options9.forEach(option9 => option9.addEventListener('click', changeOption9));
+buyButton.addEventListener('click', submitForm)
+
+function valueExists(o, data){
+    if (data.product === "KIT VERÃO") {
+        if (data.scent === o.scent) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
 let x = window.matchMedia("(max-width: 1000px)");
 

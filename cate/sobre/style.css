@@ -22,22 +22,7 @@ section .circle{
     height: 100%;
     background-color: #22E4AC ;
     clip-path: circle(70% at right -20%);
-}
-
-header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 40px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header .logo{
-    position: relative;
-    max-width: 150px; 
-}      
+}     
 
 .content{
     position: relative;
@@ -288,8 +273,20 @@ ul ul li a:hover{
     color: #fff;
 }
 
-
-
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    position: relative;
+    max-width: 150px; 
+} 
 
 header ul li{
     list-style: none;
@@ -323,5 +320,3 @@ header ul li a.btn{
 header ul li a.btn:hover{
     background-color: #615c59;
 }
-
-

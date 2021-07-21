@@ -10,45 +10,6 @@ body{
     overflow-x: hidden;
 }
 
-header{
-    padding: 50px 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-header ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 15px;
-}
-header ul li a{
-    color: #aba9b4;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: all ease 0.5s;
-}
-header ul li a:hover{
-    color: #08B3E5;
-}
-header ul li a.btn{
-    display: inline-block;
-    width: 200px;
-    height: 60px;
-    line-height: 20px;
-    background-color: #08B3E5;
-    color: #fff;
-    text-align: center;
-    justify-content: center;
-    padding-top: 10px;
-    font-size: 15px;
-    border-radius: 50px;
-    transition: all ease 0.5s;
-}
-header ul li a.btn:hover{
-    background-color: #615c59;
-}
-
 section{
     padding: 20px;
     width: 1280px;
@@ -120,45 +81,6 @@ section ul li.active{
     background-position: 2732px 0;
     opacity: .3;
     animation: waveOne 120s linear infinite; 
-}
-
-
-/*SUBMENU*/
-ul ul{
-    max-width: 250px;
-    position: absolute;
-    padding: 10px 0;
-    opacity: 0;
-    z-index: -9999;
-    transition: all ease 0.5s;
-}
-ul li:hover ul{
-    opacity: 1;
-    z-index: 9;
-    padding: 10px 0;
-}
-ul ul li{
-    margin: 0;
-    width: 100%;
-}
-ul ul li a{
-    width: 100%;
-    display: inline-block;
-    padding: 12px;
-    background-color: #383a58;
-    color: #fff;
-}
-ul ul li:first-child a{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-ul ul li:last-child a{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-ul ul li a:hover{
-    background-color: #08B3E5;
-    color: #fff;
 }
 
 /* card */
@@ -274,4 +196,154 @@ ul ul li a:hover{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+@media (max-width:991px){
+    header{
+        padding: 40px;
+    }
+    section{
+        padding-top: 150px;
+        padding-bottom: 0px;
+    }
+    .sci{
+        left: 40px;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .content .textBox,
+    .content .imgBox{
+        max-width: 100%;
+    }
+
+    .swiper-slide{
+        height: 500px;
+    }
+
+    header .navigation{
+        display: none;
+    }
+
+    header .navigation.active{
+        display: flex;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1E1F31;
+        position: fixed;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    header .navigation li a{
+        margin: 50px 0;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    header .navigation li ul{
+        display: none;
+    }    
+}
+
+.iframe-container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+    bottom: 10px;
+}
+.iframe-container iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+ul ul{
+    max-width: 250px;
+    position: absolute;
+    padding: 10px 0;
+    opacity: 0;
+    z-index: -9999;
+    transition: all ease 0.5s;
+}
+ul li:hover ul{
+    opacity: 1;
+    z-index: 9;
+    padding: 10px 0;
+}
+ul ul li{
+    margin: 0;
+    width: 100%;
+}
+ul ul li a{
+    width: 100%;
+    display: inline-block;
+    padding: 12px;
+    background-color: #383a58;
+    color: #fff;
+}
+ul ul li:first-child a{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+ul ul li:last-child a{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+ul ul li a:hover{
+    background-color: #08B3E5;
+    color: #fff;
+}
+
+header{
+    padding: 50px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo{
+    position: relative;
+    max-width: 150px; 
+}
+
+header ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+header ul li a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all ease 0.5s;
+}
+header ul li a:hover{
+    color: #08B3E5;
+}
+header ul li a.btn{
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    line-height: 20px;
+    background-color: #08B3E5;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10px;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: all ease 0.5s;
+}
+header ul li a.btn:hover{
+    background-color: #615c59;
 }

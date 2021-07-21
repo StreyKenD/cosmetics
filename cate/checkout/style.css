@@ -10,7 +10,9 @@
 }
 
 body{
-    background-color: #efefef;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1E1F31;
+    overflow-x: hidden;
 }
 
 header{
@@ -66,11 +68,52 @@ header ul li a.btn:hover{
     overflow: hidden;
 }
 
+
 .card{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 860px;
+}
+
+.grid > div {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* padding: 20px 0; */
+    font-size: 24px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.item1{
+    grid-row: 2;
+}
+
+.cart{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 860px;
+    border-radius: 25px;
+}
+
+.total{
+    text-align: right;
+    border-radius: 25px;
+}
+
+tr:nth-child(even) {
+    background-color: #eee;
+}
+
+th {
+    background-color: black;
+    color: white;
 }
 
 .shoeBackground{
@@ -246,9 +289,9 @@ header ul li a.btn:hover{
     text-transform: capitalize;
 }
 
-.shoeName, .description, .color-container, .size-container{
+/* .shoeName, .description, .color-container, .size-container{
     border-bottom: 1px solid #dadada;
-}
+} */
 
 .description{
     padding: 10px 0;
@@ -266,14 +309,6 @@ header ul li a.btn:hover{
     font-size: 17px;
 }
 
-input[type="radio"] {
-    display: none;
-  }
-
-input[type="checkbox"] {
-    display: none;
-  }
-
 .color-container{
     padding: 10px 0;
 }
@@ -285,7 +320,6 @@ input[type="checkbox"] {
 }
 
 .color{
-    display: inline-block;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -322,13 +356,11 @@ input[type="checkbox"] {
 
 .color.active{
     border-color: #fff;
-    border-radius: 100px;
     box-shadow: 0 0 10px .5px rgba(0, 0, 0, 0.2);
     transform: scale(1.1);
 }
 
 .size-container{
-    padding: 10px 0;
     margin-bottom: 10px;
 }
 
@@ -402,10 +434,10 @@ input[type="checkbox"] {
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: 500;
     font-size: 0.7rem;
     transition: .5s;
-    border-radius: 30px;
 }
 
 .buy:hover{
@@ -414,6 +446,79 @@ input[type="checkbox"] {
 
 .buy i{
     margin-right: 2px;
+}
+
+.btn {
+    background-color: #01BAEF;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    box-shadow: 0 0 1rem 0 rgba(99, 123, 150, 0.329);
+}
+
+.btn:hover {
+    background-color: #0CBABA;
+}
+
+hr {
+    border: 1px solid lightgrey;
+}
+
+span.price {
+    float: right;
+    color: grey;
+}
+
+.icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+label, h3 {
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid rgb(130, 26, 26);
+    border-radius: 1px;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+}
+
+.col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+}
+
+.col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+}
+
+.col-25,.col-50,.col-75 {
+    padding: 0 16px;
 }
 
 @media (max-width: 1070px){
@@ -451,6 +556,15 @@ input[type="checkbox"] {
 
     .shoeBackgroundShampoo{
         bottom: 0px;
+    }
+}
+
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column-reverse;
+    }
+    .col-25 {
+        margin-bottom: 20px;
     }
 }
 
@@ -499,14 +613,6 @@ input[type="checkbox"] {
     .buy{
         padding: .5rem .8rem;
         font-size: .8rem;
-    }
-
-    .price h1{
-        font-size: 1.5rem;
-    }
-
-    .price i{
-        font-size: .9rem;
     }
 
     .size{

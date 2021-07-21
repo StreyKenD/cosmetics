@@ -59,138 +59,232 @@
                     <h3 class="title">Informações do Shampoo</h3>
                     <p class="text">Kit pensado especialmente para os dias de verão, contendo dois sabonetes pós sol, um sabonete de rosto limpeza profunda, um sabonete hidratante, um creme hidratante pós sol, um shampoo de frutas tropicais e um condicionar com funções reparadoras.</p>
                 </div>
-                <div class="color-container">
-                    <h3 class="title">Aroma</h3>
-                    <div class="colors">
-                        <span class="color active" primary="#2175f5" color="blue"></span>
-                        <span class="color" primary="#f84848" color="red"></span>
-                        <span class="color" primary="#29b864" color="green"></span>
+                <form id="form">
+                    <div class="color-container">
+                        <h3 class="title">Aroma</h3>
+                        <div class="colors">
+                            <input type="radio" name="scent" id="blue" value="blue" checked>
+                            <label for="blue"><span class="color active" color="blue"></span></label>
 
+                            <input type="radio" name="scent" id="red" value="red">
+                            <label for="red"><span class="color" color="red"></span></label>
+
+                            <input type="radio" name="scent" id="green" value="green">
+                            <label for="green"><span class="color" color="green"></span></label>
+                        </div>
                     </div>
-                </div>
-                <div class="size-container">
-                    <h3 class="title">Qual seu tipo de cabelo atual?</h3>
-                    <div class="options1">
-                        <span class="option1 active">Liso</span>
-                        <span class="option1">Ondulado</span>
-                        <span class="option1">Cacheado</span>
-                        <span class="option1">Crespo</span>
+                    <div class="size-container">
+                        <h3 class="title">Qual seu tipo de cabelo atual?</h3>
+                        <div class="options1">
+                            <input type="radio" name="type" id="Liso" value="Liso" checked>
+                            <label for="Liso"><span class="option1 active">Liso</span></label>
+
+                            <input type="radio" name="type" id="Ondulado" value="Ondulado">
+                            <label for="Ondulado"><span class="option1">Ondulado</span></label>
+
+                            <input type="radio" name="type" id="Cacheado" value="Cacheado">
+                            <label for="Cacheado"><span class="option1">Cacheado</span></label>
+
+                            <input type="radio" name="type" id="Crespo" value="Crespo">
+                            <label for="Crespo"><span class="option1">Crespo</span></label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="size-container">
-                    <h3 class="title">Qual o comprimento dos seus fios?</h3>
-                    <div class="options2">
-                        <span class="option2 active">Curto</span>
-                        <span class="option2">Médio</span>
-                        <span class="option2">Longo</span>
+                    <div class="size-container">
+                        <h3 class="title">Qual o comprimento dos seus fios?</h3>
+                        <div class="options2">
+                            <input type="radio" name="size" id="Curto" value="Curto" checked>
+                            <label for="Curto"><span class="option2 active">Curto</span></label>
+
+                            <input type="radio" name="size" id="Médio" value="Médio">
+                            <label for="Médio"><span class="option2">Médio</span></label>
+
+                            <input type="radio" name="size" id="Longo" value="Longo">
+                            <label for="Longo"><span class="option2">Longo</span></label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="size-container">
-                    <h3 class="title">Qual a oleosidade do seu cabelo?</h3>
-                    <div class="options3">
-                        <span class="option3 active">Seco</span>
-                        <span class="option3">Normal</span>
-                        <span class="option3">Oleoso</span>
-                        <span class="option3">Raiz Oleosa e ponta seca</span>
+                    <div class="size-container">
+                        <h3 class="title">Qual a oleosidade do seu cabelo?</h3>
+                        <div class="options3">
+                            <input type="radio" name="oleo" id="Seco" value="Seco" checked>
+                            <label for="Seco"><span class="option3 active">Seco</span></label>
+
+                            <input type="radio" name="oleo" id="Normal" value="Normal">
+                            <label for="Normal"><span class="option3">Normal</span></label>
+
+                            <input type="radio" name="oleo" id="Oleoso" value="Oleoso">
+                            <label for="Oleoso"><span class="option3">Oleoso</span></label>
+
+                            <input type="radio" name="oleo" id="Raiz" value="Raiz Oleosa e ponta seca">
+                            <label for="Raiz"><span class="option3">Raiz Oleosa e ponta seca</span></label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="size-container">
-                    <h3 class="title">Quais procedimentos costuma fazer no cabelo?</h3>
-                    <div class="options4">
-                        <span class="option4 active">Alisamento</span>
-                        <span class="option4">Escova/Chapinha</span>
-                        <span class="option4">Descoloração</span>
-                        <span class="option4">Tingimento</span>
-                        <span class="option4">Nenhum</span>
+                    <div class="size-container">
+                        <h3 class="title">Quais procedimentos costuma fazer no cabelo?</h3>
+                        <div class="options4">
+                            <input type="radio" name="process" id="Alisamento" value="Alisamento" checked>
+                            <label for="Alisamento"><span class="option4 active">Alisamento</span></label>
+
+                            <input type="radio" name="process" id="Escova/Chapinha" value="Escova/Chapinha">
+                            <label for="Escova/Chapinha"><span class="option4">Escova/Chapinha</span></label>
+
+                            <input type="radio" name="process" id="Descoloração" value="Descoloração">
+                            <label for="Descoloração"><span class="option4">Descoloração</span></label>
+
+                            <input type="radio" name="process" id="Tingimento" value="Tingimento">
+                            <label for="Tingimento"><span class="option4">Tingimento</span></label>
+
+                            <input type="radio" name="process" id="Nenhum" value="Nenhum">
+                            <label for="Nenhum"><span class="option4">Nenhum</span></label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="size-container">
-                    <h3 class="title">Quantas vezes na semana você lava o cabelo?</h3>
-                    <div class="options5">
-                        <span class="option5 active">1</span>
-                        <span class="option5">2</span>
-                        <span class="option5">3</span>
-                        <span class="option5">4</span>
-                        <span class="option5">5</span>
-                        <span class="option5">6</span>
-                        <span class="option5">7</span>
+                    <div class="size-container">
+                        <h3 class="title">Quantas vezes na semana você lava o cabelo?</h3>
+                        <div class="options5">
+                            <input type="radio" name="quantity" id="1" value="1" checked>
+                            <label for="1"><span class="option5 active">1</span></label>
+                            
+                            <input type="radio" name="quantity" id="2" value="2">
+                            <label for="2"><span class="option5">2</span></label>
+
+                            <input type="radio" name="quantity" id="3" value="3">
+                            <label for="3"><span class="option5">3</span></label>
+
+                            <input type="radio" name="quantity" id="4" value="4">
+                            <label for="4"><span class="option5">4</span></label>
+
+                            <input type="radio" name="quantity" id="5" value="5">
+                            <label for="5"><span class="option5">5</span></label>
+
+                            <input type="radio" name="quantity" id="6" value="6">
+                            <label for="6"><span class="option5">6</span></label>
+
+                            <input type="radio" name="quantity" id="7" value="7">
+                            <label for="7"><span class="option5">7</span></label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="size-container">
-                    <h3 class="title">Onde você pratica atividade física?</h3>
-                    <div class="options6">
-                        <span class="option6 active">Ar livre</span>
-                        <span class="option6">Ambiente Fechado</span>
-                        <span class="option6">Na água</span>
-                        <span class="option6">Não pratica</span>
+                    <div class="size-container">
+                        <h3 class="title">Onde você pratica atividade física?</h3>
+                        <div class="options6">
+                            <input type="radio" name="where" id="Ar livre" value="Ar livre" checked>
+                            <label for="Ar livre"><span class="option6 active">Ar livre</span></label>
+
+                            <input type="radio" name="where" id="Ambiente Fechado" value="Ambiente Fechado">
+                            <label for="Ambiente Fechado"><span class="option6">Ambiente Fechado</span></label>
+
+                            <input type="radio" name="where" id="Na água" value="Na água">
+                            <label for="Na água"><span class="option6">Na água</span></label>
+
+                            <input type="radio" name="where" id="Não pratica" value="Não pratica">
+                            <label for="Não pratica"><span class="option6">Não pratica</span></label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="size-container">
-                    <h3 class="title">Qual sua faixa etária?</h3>
-                    <div class="options7">
-                        <span class="option7 active">2 a 10</span>
-                        <span class="option7">11 a 17</span>
-                        <span class="option7">18 a 24</span>
-                        <span class="option7">25 a 34</span>
-                        <span class="option7">35 a 44</span>
-                        <span class="option7">45 a 54</span>
-                        <span class="option7">55 a 64</span>
-                        <span class="option7">65+</span>
+                    <div class="size-container">
+                        <h3 class="title">Qual sua faixa etária?</h3>
+                        <div class="options7">
+                            <input type="radio" name="age" id="2 a 10" value="2 a 10" checked>
+                            <label for="2 a 10"><span class="option7 active">2 a 10</span></label>
+
+                            <input type="radio" name="age" id="11 a 17" value="11 a 17">
+                            <label for="11 a 17"><span class="option7">11 a 17</span></label>
+
+                            <input type="radio" name="age" id="18 a 24" value="18 a 24">
+                            <label for="18 a 24"><span class="option7">18 a 24</span></label>
+
+                            <input type="radio" name="age" id="25 a 34" value="25 a 34">
+                            <label for="25 a 34"><span class="option7">25 a 34</span></label>
+
+                            <input type="radio" name="age" id="35 a 44" value="35 a 44">
+                            <label for="35 a 44"><span class="option7">35 a 44</span></label>
+
+                            <input type="radio" name="age" id="45 a 54" value="45 a 54">
+                            <label for="45 a 54"><span class="option7">45 a 54</span></label>
+
+                            <input type="radio" name="age" id="55 a 64" value="55 a 64">
+                            <label for="55 a 64"><span class="option7">55 a 64</span></label>
+
+                            <input type="radio" name="age" id="65+" value="65+">
+                            <label for="65+"><span class="option7">65+</span></label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="size-container">
-                    <h3 class="title">Quais efeitos você gostaria para a sua fórmula?</h3>
-                    <div class="options8">
-                        <span class="option8 active">Crescimento</span>
-                        <span class="option8">Brilho Intenso</span>
-                        <span class="option8">Hidratação Continua</span>
-                        <span class="option8">Controle de Oleosidade</span>
-                        <span class="option8">Reparação Imediata</span>
-                        <span class="option8">Blindagem de Cor</span>
-                        <span class="option8">Fortificação dos Fios</span>
-                        <span class="option8">Antifrizz</span>
-                        <span class="option8">Prevenção de quebra ou queda</span>
-                        <span class="option8">Volume controlado</span>
+                    <div class="size-container">
+                        <h3 class="title">Quais efeitos você gostaria para a sua fórmula?</h3>
+                        <div class="options8">
+                            <input type="checkbox" name="effect" id="Crescimento" value="Crescimento" checked>
+                            <label for="Crescimento"><span class="option8 active">Crescimento</span></label>
+
+                            <input type="checkbox" name="effect" id="Brilho Intenso" value="Brilho Intenso">
+                            <label for="Brilho Intenso"><span class="option8">Brilho Intenso</span></label>
+
+                            <input type="checkbox" name="effect" id="Hidratação Continua" value="Hidratação Continua">
+                            <label for="Hidratação Continua"><span class="option8">Hidratação Continua</span></label>
+
+                            <input type="checkbox" name="effect" id="Controle de Oleosidade" value="Controle de Oleosidade">
+                            <label for="Controle de Oleosidade"><span class="option8">Controle de Oleosidade</span></label>
+
+                            <input type="checkbox" name="effect" id="Reparação Imediata" value="Reparação Imediata">
+                            <label for="Reparação Imediata"><span class="option8">Reparação Imediata</span></label>
+
+                            <input type="checkbox" name="effect" id="Blindagem de Cor" value="Blindagem de Cor">
+                            <label for="Blindagem de Cor"><span class="option8">Blindagem de Cor</span></label>
+
+                            <input type="checkbox" name="effect" id="Fortificação dos Fios" value="Fortificação dos Fios">
+                            <label for="Fortificação dos Fios"><span class="option8">Fortificação dos Fios</span></label>
+
+                            <input type="checkbox" name="effect" id="Antifrizz" value="Antifrizz">
+                            <label for="Antifrizz"><span class="option8">Antifrizz</span></label>
+
+                            <input type="checkbox" name="effect" id="Prevenção de quebra ou queda" value="Prevenção de quebra ou queda">
+                            <label for="Prevenção de quebra ou queda"><span class="option8">Prevenção de quebra ou queda</span></label>
+
+                            <input type="checkbox" name="effect" id="Volume controlado" value="Volume controlado">
+                            <label for="Volume controlado"><span class="option8">Volume controlado</span></label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="size-container">
-                    <h3 class="title">Qual a intesidade da fragância você prefere?</h3>
-                    <div class="options9">
-                        <span class="option9 active">Suave</span>
-                        <span class="option9">Moderada</span>
-                        <span class="option9">Intensa</span>
+                    <div class="size-container">
+                        <h3 class="title">Qual a intesidade da fragância você prefere?</h3>
+                        <div class="options9">
+                            <input type="radio" name="intense" id="Suave" value="Suave" checked>
+                            <label for="Suave"><span class="option9 active">Suave</span></label>
+
+                            <input type="radio" name="intense" id="Moderada" value="Moderada">
+                            <label for="Moderada"><span class="option9">Moderada</span></label>
+
+                            <input type="radio" name="intense" id="Intensa" value="Intensa">
+                            <label for="Intensa"><span class="option9">Intensa</span></label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="size-container">
-                    <h3 class="title">Qual o nome da sua fórmula?</h3>
-                    <input type="text" placeholder="Crie o nome da sua fórmula" required>
-                </div>
-
-                
-
-
-
-                <div class="buy-price">
-                    <a href="#" class="buy"><i class="fas fa-shopping-cart"></i>Adicionar ao Carrinho</a>
-                    <div class="price">
-                        <h1><small>R$</small>29,99</h1>
+                    <div class="size-container">
+                        <h3 class="title">Qual o nome da sua fórmula?</h3>
+                        <input type="text" id="name" placeholder="Crie o nome da sua fórmula" required>
                     </div>
-                </div>
+
+                    <div class="buy-price">
+                        <a href="../carrinho/carrinho.html" class="buy"><i class="fas fa-shopping-cart"></i>Adicionar ao Carrinho</a>
+                        <div class="price">
+                            <h1><small>R$</small>29,99</h1>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="enfeite">
             <img src="../images/kiwi.png">
         </div>
     </div>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
     <script src="app.js"></script>
 </body>
 </html>

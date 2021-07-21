@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Produtos | Kiwyx</title>
+    <link rel="stylesheet" href="../checkout/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <a href="../index.html"></a>
+        <div class="logo">
+            <img src="../images/logo(1).png" alt="">
+        </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../produtos/produtos.html">Produtos</a></li>
+                <li><a href="../sobre/sobre.html">Sobre nós</a></li>
+                <li><a class="btn" href="//api.whatsapp.com/send?phone=5519996001311&text=Oi%20Fran!!%20Tudo%20bem%3F%20Gostaria%20de%20saber%20algumas%20informa%C3%A7%C3%B5es%20sobre%20seus%20cosm%C3%A9ticos%20naturais%20%F0%9F%98%8D%20Pode%20me%20ajudar%3F">Converse com a gente!</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-75">
+                <div class="container">
+                    <form id="validate">
+                        <div class="row">
+                            <div class="col-50">
+                                <h3>Dados</h3>
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="name"><i class="fa fa-user"></i> Nome</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="lastname"><i class="fa fa-user"></i> Sobrenome</label>
+                                        <input type="text" id="lastname" name="lastname" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="cpf"><i class="fa fa-user"></i> CPF</label>
+                                        <input type="text" id="cpf" name="cpf" required>
+                                    </div>
+                                    <div class="col-25">
+                                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                                        <input type="text" id="email" name="email" required>
+                                    </div>
+                                    <div class="col-25">
+                                        <label for="phone"><i class="fa fa-phone"></i> Telefone</label>
+                                        <input type="text" id="phone" name="phone" required>
+                                    </div>
+                                </div>
+                                <h3>Endereço</h3>
+                                <label for="cep"> CEP</label>
+                                <input type="text" id="cep" name="cep" required>
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="adr"><i class="fa fa-address-card-o"></i> Endereço</label>
+                                        <input type="text" id="adr" name="address" required>
+                                    </div>
+                                    <div class="col-25">
+                                        <label for="num"><i class="fa fa-address-card-o"></i> Número</label>
+                                        <input type="text" id="num" name="num" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="city"><i class="fa fa-institution"></i> Cidade</label>
+                                        <input type="text" id="city" name="city" required>
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="state">Estado</label>
+                                        <input type="text" id="state" name="state" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="checkout-btn">Continuar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!-- SDK MercadoPago.js V2 -->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="app.js"></script>
+    <script
+			src="https://code.jquery.com/jquery-3.6.0.js"
+			integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous">
+    </script>
+		
+</div>
+</body>
+</html>

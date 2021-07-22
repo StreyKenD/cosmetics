@@ -6,7 +6,7 @@ const options4 = document.querySelectorAll('.option4');
 const options5 = document.querySelectorAll('.option5');
 const options6 = document.querySelectorAll('.option6');
 const options7 = document.querySelectorAll('.option7');
-const options8 = document.querySelectorAll('.option8');
+const options8 = document.querySelectorAll('.option8-c');
 const options9 = document.querySelectorAll('.option9');
 const colors = document.querySelectorAll('.color');
 const shoes = document.querySelectorAll('.shoe');
@@ -61,17 +61,17 @@ function changeOption7(){
 }
 
 function changeOption8(){
-    if ($('input[type=checkbox]:checked').length >= 5) {
-        const checkboxs = Array.from(document.querySelectorAll('input[type=checkbox]'));
-        let actual = checkboxs.find(el => el.getAttribute('value') === this.innerText);
-        this.classList.remove('active');
+    const spans = Array.from(document.querySelectorAll('.option8'));
+    let actual = spans.find(el => el.innerText === this.id);
+    if ($('input[type=checkbox]:checked').length > 5 && !actual.classList.contains('active')) {
+        actual.classList.remove('active');
         alert("Somente 5 podem ser selecionados");
-        actual.checked = true;
+        this.checked = false;
     } else {
-        if (this.classList.length > 1) {
-            this.classList.remove('active');
+        if (actual.classList.length > 1) {
+            actual.classList.remove('active');
         } else {
-            this.classList.add('active');
+            actual.classList.add('active');
         }
     }
 }
@@ -167,7 +167,7 @@ options4.forEach(option4 => option4.addEventListener('click', changeOption4));
 options5.forEach(option5 => option5.addEventListener('click', changeOption5));
 options6.forEach(option6 => option6.addEventListener('click', changeOption6));
 options7.forEach(option7 => option7.addEventListener('click', changeOption7));
-options8.forEach(option8 => option8.addEventListener('click', changeOption8));
+options8.forEach(option8 => option8.addEventListener('change', changeOption8));
 options9.forEach(option9 => option9.addEventListener('click', changeOption9));
 buyButton.addEventListener('click', submitForm)
 

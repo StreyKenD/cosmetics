@@ -311,8 +311,7 @@ header{
 }
 
 header .logo{
-    position: relative;
-    max-width: 150px; 
+    padding: 43px 100px;
 }
 
 header ul li{
@@ -321,7 +320,7 @@ header ul li{
     margin: 0 15px;
 }
 header ul li a{
-    color: #fff;
+    color: #aba9b4;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1px;

@@ -518,7 +518,7 @@ input[type=text] {
 }
 
 .col-25,.col-50,.col-75 {
-    padding: 0 16px;
+    padding: 0 10px;
 }
 
 @media (max-width: 1070px){
@@ -662,4 +662,57 @@ input[type=text] {
     .container{
         padding: 20px;
     }
+}
+
+@media (max-width:991px){
+    header{
+        padding: 40px;
+    }
+    section{
+        padding-top: 150px;
+        padding-bottom: 0px;
+    }
+    .sci{
+        left: 40px;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .content .textBox,
+    .content .imgBox{
+        max-width: 100%;
+    }
+
+    .swiper-slide{
+        height: 500px;
+    }
+
+    header .navigation{
+        display: none;
+    }
+
+    header .navigation.active{
+        display: flex;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1E1F31;
+        position: fixed;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    header .navigation li a{
+        margin: 50px 0;
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    header .navigation li ul{
+        display: none;
+    }
+    
 }

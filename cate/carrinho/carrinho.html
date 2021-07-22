@@ -20,20 +20,21 @@
         <ul class="navigation"> 
             <li><a href="../produtos/produtos.html">PRODUTOS</a></li>
             <li><a href="../sobre/sobre.html">sobre nós</a></li>
+            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
             <li><a class="btn" href="//api.whatsapp.com/send?phone=5519996001311&text=Oi%20Fran!!%20Tudo%20bem%3F%20Gostaria%20de%20saber%20algumas%20informa%C3%A7%C3%B5es%20sobre%20seus%20cosm%C3%A9ticos%20naturais%20%F0%9F%98%8D%20Pode%20me%20ajudar%3F">Converse com a gente!</a></li>
         </ul>
     </header>
     <div class="container">
         <div class="card grid">
             <div class="cart item1">
-                <table id="table" style="width:100%">
+                <!-- <table id="table" style="width:100%">
                     <tr>
                       <th>Produto</th>
                       <th>Valor</th>
                       <th>Quantidade</th>
-                      <th>Ações</th>
+                      <th>Excluir</th>
                     </tr>
-                </table>
+                </table> -->
             </div>
             <div class="frete">
                 <label for="frete"> Frete:</label>
@@ -44,8 +45,10 @@
             </div>
             <a href="../checkout/checkout.html" class="btn buy">Continuar</a>
             <div class="frete-data">
-                <label id="frete-price"></label>
-                <label id="frete-date"></label>
+                <div class="row">
+                    <span>Valor: </span><label id="frete-price"></label>
+                </div>
+                <span>Prazo de entrega: </span><label id="frete-date"></label>
             </div>
         </div>
         <script

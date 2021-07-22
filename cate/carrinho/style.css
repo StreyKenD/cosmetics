@@ -13,6 +13,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     background-color: #1E1F31;
     overflow-x: hidden;
+    color: white
 }
 
 ul ul{
@@ -119,7 +120,6 @@ header ul li a.btn:hover{
 }
 
 .grid > div {
-    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px 0;
     font-size: 24px;
 }
@@ -145,26 +145,24 @@ header ul li a.btn:hover{
     justify-content: center;
     align-items: center;
     width: 860px;
-    border-radius: 25px;
 }
 
 .total, .frete{
     text-align: center;
-    border-radius: 25px;
 }
 
 .frete-data{
     display: none;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
     background-color: #eee;
 }
 
 th {
     background-color: black;
     color: white;
-}
+} */
 
 .shoeBackground{
     position:relative;

@@ -6,17 +6,18 @@ const fretePrice = document.getElementById('frete-price');
 const freteDate = document.getElementById('frete-date');
 const freteData = document.querySelector('.frete-data');
 
-// TODO: fazer o preco do carrinho alterar quando inserido o frete!
-// Todo: colocar o aroma do KIT verao no carrinho
 function beforePageLoad(){
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const tableBody = table.getElementsByTagName('tbody')[0];
+    const cartDiv = document.querySelector('cart');
     for (const product of cart) {
-        let newRow = tableBody.insertRow();
+        var productDiv = document.createElement("div")
 
-        let productCell = newRow.insertCell();
-        let productText = document.createTextNode(product.product);
-        productCell.appendChild(productText);
+        let productName = product.product
+        if (product.product === 'KIT VERÃO') {
+            productName += '(' + product.scent + ')'
+        } else if (product.product === 'Shampoo Natural') {
+            productName += '(' + product.name + ')'
+        }
 
         let priceCell = newRow.insertCell();
         let priceText = document.createTextNode(product.price);
@@ -79,6 +80,9 @@ function updatePrice(){
     } else {
         totalPrice.innerText = 'Total: R$ 0,00';
     }
+    if (fretePrice.innerText !== '') {
+        totalPrice.innerText = 'Total: R$' + parseFloat(total + parseFloat(fretePrice.innerText)).toFixed(2);
+    }
 }
 
 function remove(row){
@@ -124,8 +128,9 @@ function getFreteData(){
         })
         .then(function(frete) {
             freteData.style.display = "block";
-            fretePrice.innerText = 'Valor: R$' + frete.data[0].Valor;
-            freteDate.innerText = 'Tempo:' + frete.data[0].PrazoEntrega + 'dias';
+            fretePrice.innerText = frete.data[0].Valor;
+            freteDate.innerText = frete.data[0].PrazoEntrega;
+            updatePrice();
         })
         .catch(function(e) {
             console.log(e);

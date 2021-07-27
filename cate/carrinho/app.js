@@ -71,7 +71,7 @@ function beforePageLoad(){
 function add(row){
     let quant = row.getElementsByTagName("label");
     if (quant.length > 0) {
-        quant[0].innerText = parseInt(quant[0].innerText) + 1;
+        quant[1].innerText = parseInt(quant[1].innerText) + 1;
     }
     let orders = JSON.parse(localStorage.getItem('cart'));
     const location = row.querySelector('.fa-trash');
@@ -86,8 +86,8 @@ function add(row){
 function sub(row){
     let quant = row.getElementsByTagName("label");
     let orders = JSON.parse(localStorage.getItem('cart'));
-    if (quant.length > 0 && quant[0].innerText > 1) {
-        quant[0].innerText = parseInt(quant[0].innerText) - 1;
+    if (quant.length > 0 && quant[1].innerText > 1) {
+        quant[1].innerText = parseInt(quant[1].innerText) - 1;
         
         const location = row.querySelector('.fa-trash');
         const id = parseInt(location.getAttribute('location'));

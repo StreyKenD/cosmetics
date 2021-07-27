@@ -1,16 +1,35 @@
 const table = document.getElementById('table');
-const rows = table.getElementsByTagName("tr");
 const totalPrice = document.querySelector('.total');
 const frete = document.getElementById('frete');
 const fretePrice = document.getElementById('frete-price');
 const freteDate = document.getElementById('frete-date');
-const freteData = document.querySelector('.frete-data');
+let items = null
 
 function beforePageLoad(){
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartDiv = document.querySelector('cart');
-    for (const product of cart) {
-        var productDiv = document.createElement("div")
+    const cartDiv = document.querySelector('.cart');
+    let cartProducts = JSON.parse(localStorage.getItem('cart')) || [];
+    for (const product of cartProducts) {
+
+        let item = document.createElement("div")
+        item.classList.add("item")
+
+        let row1 = document.createElement("div")
+        row1.classList.add("row")
+
+        let row2 = document.createElement("div")
+        row2.classList.add("row")
+
+        let productDiv = document.createElement("div")
+        productDiv.classList.add("col-75")
+
+        let removeDiv = document.createElement("div")
+        removeDiv.classList.add("col-25")
+
+        let priceDiv = document.createElement("div")
+        priceDiv.classList.add("col-75")
+
+        let quantityDiv = document.createElement("div")
+        quantityDiv.classList.add("col-25")
 
         let productName = product.product
         if (product.product === 'KIT VERÃO') {
@@ -19,18 +38,33 @@ function beforePageLoad(){
             productName += '(' + product.name + ')'
         }
 
-        let priceCell = newRow.insertCell();
-        let priceText = document.createTextNode(product.price);
-        priceCell.appendChild(priceText);
-
-        let quantCell = newRow.insertCell();
-        if (typeof product.quantity === 'number' && product.quantity >= 1 && product.quantity <= 99) {
-            quantCell.innerHTML =  '<a><i class="fa fa-plus"></i></a><label id="quant">' + product.quantity + '</label><a><i class="fa fa-minus"></i></a>';
+        productDiv.innerText = productName
+        if (typeof product.id === 'number') {
+            removeDiv.innerHTML = '<a><i location='+ product.id +' class="fa fa-trash"></i></a>';
         }
 
-        let actionCell = newRow.insertCell();
-        actionCell.innerHTML = '<a><i location='+ product.id +' class="fa fa-trash"></i></a>';
+        if (typeof product.price === 'number') {
+            priceDiv.innerHTML = '<label id="quant">R$ ' + product.price + '</label>'
+        }
+        if (typeof product.quantity === 'number' && product.quantity >= 1 && product.quantity <= 99) {
+            quantityDiv.innerHTML = '<a><i class="fa fa-plus"></i></a><label id="quant">' + product.quantity + '</label><a><i class="fa fa-minus"></i></a>';
+        }
+
+        const hr = document.createElement("hr")
+        hr.classList.add("solid");
+
+        row1.appendChild(productDiv)
+        row1.appendChild(removeDiv)
+        row2.appendChild(priceDiv)
+        row2.appendChild(quantityDiv)
+
+        item.appendChild(row1)
+        item.appendChild(row2)
+        item.appendChild(hr)
+
+        cartDiv.appendChild(item)
     }
+    items = document.querySelectorAll('.item');
     updatePrice();
 }
 
@@ -67,11 +101,11 @@ function sub(row){
 
 function updatePrice(){
     let total = null;
-    for (const row of rows) {
-        const data = row.getElementsByTagName('td');
+    for (const item of items) {
+        const data = item.getElementsByTagName('label');
         if (data.length > 0) {
-            const quant = data[2].innerText;
-            const price = data[1].innerText;
+            const quant = data[1].innerText;
+            const price = data[0].innerText.split(' ')[1];
             total += quant * price;
         }
     }
@@ -86,7 +120,7 @@ function updatePrice(){
 }
 
 function remove(row){
-    var row = row.parentNode.parentNode.parentNode;
+    var row = row.parentNode.parentNode.parentNode.parentNode;
     row.parentNode.removeChild(row);
 
     let orders = JSON.parse(localStorage.getItem('cart'));
@@ -102,12 +136,12 @@ function remove(row){
 
 beforePageLoad();
 
-for (const row of rows) {
-    if (row.getElementsByTagName('i').length > 1) {
-        let buttons = row.getElementsByTagName('i');
-        buttons[0].addEventListener('click', function() { add(row); });
-        buttons[1].addEventListener('click', function() { sub(row); });
-        buttons[2].addEventListener('click', function() { remove(buttons[2]); } );
+for (const item of items) {
+    if (item.getElementsByTagName('i').length > 1) {
+        let buttons = item.getElementsByTagName('i');
+        buttons[1].addEventListener('click', function() { add(item); });
+        buttons[2].addEventListener('click', function() { sub(item); });
+        buttons[0].addEventListener('click', function() { remove(buttons[2]); } );
     }
 };
 
@@ -127,8 +161,7 @@ function getFreteData(){
             return response.json();
         })
         .then(function(frete) {
-            freteData.style.display = "block";
-            fretePrice.innerText = frete.data[0].Valor;
+            fretePrice.innerText = frete.data[0].Valor.replace(',', '.');
             freteDate.innerText = frete.data[0].PrazoEntrega;
             updatePrice();
         })

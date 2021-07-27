@@ -25,30 +25,37 @@
         </ul>
     </header>
     <div class="container">
-        <div class="card grid">
-            <div class="cart item1">
-                <!-- <table id="table" style="width:100%">
-                    <tr>
-                      <th>Produto</th>
-                      <th>Valor</th>
-                      <th>Quantidade</th>
-                      <th>Excluir</th>
-                    </tr>
-                </table> -->
+        <div class="card grid row">
+            <div class="cart col-75">
+
             </div>
-            <div class="frete">
-                <label for="frete"> Frete:</label>
-                <input type="text" id="frete" name="frete" required>
-            </div>
-            <div class="total item2">
-                <label>Total: R$</label>
-            </div>
-            <a href="../checkout/checkout.html" class="btn buy">Continuar</a>
-            <div class="frete-data">
+            <div class="col-25 menu">
                 <div class="row">
-                    <span>Valor: </span><label id="frete-price"></label>
+                    <div class="frete">
+                        <label for="frete">Frete</label>
+                        <input type="text" id="frete" name="frete" required>
+                        <hr class="solid">
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <span>Valor: </span><label id="frete-price"></label>
+                        </div>
+                        <div class="row">
+                            <span>Prazo de entrega: </span><label id="frete-date"></label>
+                        </div>
+                    </div>
                 </div>
-                <span>Prazo de entrega: </span><label id="frete-date"></label>
+                <hr class="solid-menu">
+                <div class="row">
+                    <div class="col-75 total">
+                        <label></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25 btn-continue">
+                        <a href="../checkout/checkout.html" class="btn buy">Continuar</a>
+                    </div>
+                </div>
             </div>
         </div>
         <script

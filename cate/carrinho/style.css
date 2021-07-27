@@ -101,6 +101,17 @@ header ul li a.btn:hover{
     background-color: #615c59;
 }
 
+.btn-continue{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+input[type=text] {
+    width: 70%;
+    margin-bottom: 5px;
+    padding: 8px;
+}
 
 .container{
     min-height: 100vh;
@@ -114,9 +125,8 @@ header ul li a.btn:hover{
 
 .card{
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 860px;
+    width: 980px;
 }
 
 .grid > div {
@@ -124,45 +134,25 @@ header ul li a.btn:hover{
     font-size: 24px;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
-    padding: 10px;
+hr.solid-menu {
+    border-top: 1px solid #bbb;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.item1{
-    grid-column: 1 / span 4;
-}
-
-.item2{
-    grid-column: 2 / span 2;
-}
-
-.cart{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 860px;
+hr.solid {
+    border-top: 1px solid #bbb;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .total, .frete{
     text-align: center;
 }
-
-.frete-data{
-    display: none;
-}
-
-/* tr:nth-child(even) {
-    background-color: #eee;
-}
-
-th {
-    background-color: black;
-    color: white;
-} */
 
 .shoeBackground{
     position:relative;
@@ -492,6 +482,57 @@ th {
     margin-right: 2px;
 }
 
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 5px;
+}
+
+.fa-plus, .fa-minus{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.item .col-25{
+    display: flex;
+    justify-content: center;
+}
+
+.item .row{
+    margin-top: 5px;
+}
+
+.col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+}
+
+.col-10 {
+    -ms-flex: 10%; /* IE10 */
+    flex: 10%;
+}
+
+.col-40 {
+    -ms-flex: 40%; /* IE10 */
+    flex: 40%;
+}
+
+.col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+}
+
+.col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+}
+
+.col-25,.col-50,.col-75 {
+    padding: 0 0px;
+}
+
 @media (max-width:991px){
     header{
         padding: 40px;
@@ -543,4 +584,21 @@ th {
         display: none;
     }
     
+
+    .row {
+        flex-direction: column;
+    }
+
+    .item .row{
+        width: 380px;
+        flex-direction: row;
+    }
+
+    .menu .row .row .row{
+        flex-direction: row;
+    }
+
+    .grid > div{
+        font-size: 20px;
+    }
 }

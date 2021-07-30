@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Seu pedido está a caminho!</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="text-container">
+			<img href="../images/logo(1).png" />
+			<h1>Pedido<br>Confirmado<br><span>Personalizações aplicadas<br></span></h1>
+			<div class="animated-text">
+				<h2>Obrigado!</h2>
+				<h2>谢谢!</h2>
+				<h2>Thank you!</h2>
+				<h2>Terima kasih!</h2>
+				<h2>Gracias!</h2>
+				<h2>धन्यवाद!</h2>
+			</div>
+		</div>
+		<div class="animation-container">
+			<div class="burst">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+		</div>
+		<div>
+		<a href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			Produtos
+		</a>
+		<a href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			Home
+		</a>
+		</div>
+		
+
+		<script type="text/javascript">
+		function createBurst(){
+			let animContainer = document.querySelector('.animation-container');
+			let burst = document.querySelector('.burst');
+
+			burst.style.top = Math.random() * 550 + 'px';
+			burst.style.left = Math.random() * 750 + 'px';
+
+			let burstClone = burst.cloneNode(true);
+			animContainer.appendChild(burstClone);
+
+			setTimeout(() => {
+				burstClone.remove();
+			}, 20000);
+		}
+		setInterval(createBurst, 2000);
+		</script>
+
+	</body>
+</html>

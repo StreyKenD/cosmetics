@@ -1,15 +1,22 @@
 let xhr = new XMLHttpRequest();
 console.log(xhr);
 
-xhr.onload = function() {
-  console.log(xhr);
-  alert(`Loaded: ${xhr.status} ${xhr.response}`);
-};
+xhr.addEventListener("progress", updateProgress, false);
+xhr.addEventListener("load", transferComplete, false);
 
-xhr.onprogress = function(event) { // triggers periodically
-  console.log(xhr);
-  // event.loaded - how many bytes downloaded
-  // event.lengthComputable = true if the server sent Content-Length header
-  // event.total - total number of bytes (if lengthComputable)
-  alert(`Received ${event.loaded} of ${event.total}`);
-};
+xhr.open();
+
+function updateProgress (oEvent) {
+  console.log(oEvent);
+  if (oEvent.lengthComputable) {
+    var percentComplete = oEvent.loaded / oEvent.total;
+    // ...
+  } else {
+    // Não é possível calcular informações de progresso uma vez que a dimensão total é desconhecida
+  }
+}
+
+function transferComplete(evt) {
+  console.log(evt);
+  alert("A transferência foi concluída.");
+}

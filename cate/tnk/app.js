@@ -4,7 +4,7 @@ console.log(xhr);
 xhr.addEventListener("progress", updateProgress, false);
 xhr.addEventListener("load", transferComplete, false);
 
-xhr.open();
+xhr.open('GET', '/tnk/obrigado');
 
 function updateProgress (oEvent) {
   console.log(oEvent);

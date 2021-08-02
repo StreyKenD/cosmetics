@@ -1,0 +1,14 @@
+<p>
+  Olá {{ data.checkout.name }},
+  uma compra foi realizada com a seguinte forma de pagamento {{ payment_type }}.
+  Produtos: {{ data.cart }}
+  Endereço: {{ data.address }} - {{ data.num }}
+  {{ data.city }} - {{ data.state }}
+  Total: {{ data.cart.total }}
+</p>
+<p>
+  Caso você não tenha solicitado a compra ignore este email.
+</p>
+<p>
+  Equipe Kiwyx
+</p>

@@ -19,6 +19,6 @@ const Route = use('Route')
 // Route.on('/').render('welcome')
 
 Route.post('checkout', 'CheckoutController.store')
-Route.post('approved', 'CheckoutController.approved')
+Route.post('approved-order', 'CheckoutController.approved')
 Route.get('feedback', 'CheckoutController.get')
 Route.get('frete', 'CheckoutController.frete')

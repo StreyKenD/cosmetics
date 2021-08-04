@@ -1,12 +1,26 @@
 const orders = JSON.parse(localStorage.getItem('cart'));
-const button = document.querySelector('.cho-container');
+const button = document.querySelector('#checkout-btn');
+const form = document.getElementById('validate');
 
 // Todo: alterar quando for para producao
 const mp = new MercadoPago('TEST-7ebe3293-81b4-418f-bfba-8c6b3970278e', {
     locale: 'pt-BR'
 });
 
-function checkout(){
+async function submitForm() {
+    // todo: validacao
+    let formData = new FormData(form);
+    let data = {};
+    for (let newData of formData.entries()) {
+        data[newData[0]] = newData[1];
+    }
+    
+    localStorage.setItem("checkout", JSON.stringify(data));
+
+    await checkout()
+}
+
+function checkout() {
 
     let orderDatas = [];
     for (const order of orders) {
@@ -54,4 +68,4 @@ function createCheckoutButton(preference) {
       });
   }
 
-document.getElementById("checkout-btn").addEventListener("click", checkout);
+button.addEventListener('click', submitForm)

@@ -101,6 +101,7 @@ function sub(row){
 
 function updatePrice(){
     let total = null;
+    let checkout = JSON.parse(localStorage.getItem('checkout'))
     for (const item of items) {
         const data = item.getElementsByTagName('label');
         if (data.length > 0) {
@@ -115,7 +116,10 @@ function updatePrice(){
         totalPrice.innerText = 'Total: R$ 0,00';
     }
     if (fretePrice.innerText !== '') {
+        checkout.total = parseFloat(total + parseFloat(fretePrice.innerText)).toFixed(2)
         totalPrice.innerText = 'Total: R$' + parseFloat(total + parseFloat(fretePrice.innerText)).toFixed(2);
+    } else {
+        checkout.total = parseFloat(total).toFixed(2)
     }
 }
 

@@ -1,6 +1,7 @@
 'use strict'
 
-const Mail = use('Mail')
+// const Mail = use('Mail')
+const emailjs = require('emailjs-com')
 
 // SDK do Mercado Pago
 const mercadopago = require ('mercadopago');
@@ -84,12 +85,19 @@ class CheckoutController {
 
   async approved({request, response}) {
     let data = request.body;
-    await Mail.send('purchase-client', { data: data }, (message) => {
-      message
-        .to(data.checkout.email)
-        .from('vitor.22sk@gmail.com')
-        .subject('Pedido confirmado')
-    })
+
+    // await emailjs.send('service_95rf9qb', 'template_r43wi4r', data, 'user_zZvaLT48Hr1dzazfyBM8i')
+    //   .then(function(response) {
+    //     console.log('SUCCESS!', response.status, response.text);
+    //   }, function(error) {
+    //     console.log('FAILED...', error);
+    //   });
+    // await Mail.send('purchase-client', { data: data }, (message) => {
+    //   message
+    //     .to(data.checkout.email)
+    //     .from('vitor.22sk@gmail.com')
+    //     .subject('Pedido confirmado')
+    // })
   }
 
   async get({request, response}) {

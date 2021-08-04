@@ -27,7 +27,6 @@
     "@adonisjs/mail": "^3.1.0",
     "@adonisjs/session": "^1.0.27",
     "@adonisjs/shield": "^1.0.8",
-    "aws-sdk": "^2.957.0",
     "correios-brasil": "^2.2.2",
     "mercadopago": "^1.5.8"
   },
